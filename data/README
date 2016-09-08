@@ -1,0 +1,23 @@
+This release contains two configurations of preprocessed feature vectors and outputs from the Movie$ Data Corpus. 
+
+Input feature vectors are formatted using the sparse MatrixMarket format (http://math.nist.gov/MatrixMarket/formats.html) to save space. 
+
+Each directory corresponds to a configuration; we include the two best-performing feature sets, one per metric (total and per-screen MAE):
+ngrams-deprels-fp1-origin.runtime.budget.numscreen.ratings.seasons.stars/ -- this is the 5.738 total MAE result from Table 2 (meta \cup text, I \cup III, +).
+ngrams-deprels-origin.runtime.budget.numscreen.ratings.seasons/ -- this is the 5.998 per screen MAE result from Table 2 (meta \cup text, I \cup III, B).
+
+Within each directory,
+train.x.mm -- training data in sparse MatrixMarket format
+train.y.dat -- output variable for each training instance
+[similar files for dev and test]
+glmnet.out -- output of training with tuning of hyperparameters on dev set, showing final results on the test set (see "-- MAE (dollars) on test is: ") and features
+vocab -- the feature vocabulary; contains one feature name per line, where each feature corresponds to a single column of the input matrices
+
+This release was prepared by:
+
+Mahesh Joshi
+Dipanjan Das
+Kevin Gimpel
+Noah A. Smith
+2/16/15
+
